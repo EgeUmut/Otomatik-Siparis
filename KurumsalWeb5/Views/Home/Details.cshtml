@@ -1,0 +1,77 @@
+﻿@model KurumsalWeb5.Models.Model.Product
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+
+<div class="container">
+    <div>
+        <h4>Detaylar</h4>
+        <hr />
+        <dl class="dl-horizontal">
+
+            <dt>
+                @Html.DisplayNameFor(model => model.BarcodeNumber)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.BarcodeNumber)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ProductName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ProductName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Description)
+            </dt>
+
+            <dd>
+                @Html.Raw(Model.Description)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.UnitPrice)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.UnitPrice)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.quantity)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.quantity)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Defaultquantity)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Defaultquantity)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Limit)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Limit)
+            </dd>
+
+        </dl>
+    </div>
+
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.ProductId }) |
+        @Html.ActionLink("Geri Dön", "Urunler")
+    </p>
+</div>

@@ -1,0 +1,29 @@
+﻿@model KurumsalWeb5.Models.Model.Menu
+@using KurumsalWeb5.Helper;
+
+<li class="active"><a href="/Anasayfa">@Model.Home</a></li>
+<li class="dropdown">
+    <a href="#" class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        @Resources.Lang.Language
+    </a>
+    @{
+        Html.RenderAction("LanguagePartial", "Home");
+    }
+</li>
+
+@*<li class="sub-menu">
+        <a href="javascript:;" class="">
+            <i class="icon_document_alt"></i>
+            <span>@Resources.Lang.Language</span>
+                <span class="menu-arrow arrow_carrot-right"></span>
+        </a>
+        <ul class="sub">
+            <a href="@Url.Action("ChangeLanguage", "Home", new { lang = "tr" })">Türkçe</a>
+            <a href="@Url.Action("ChangeLanguage", "Home", new { lang = "en" })">English</a>
+        </ul>
+    </li>*@
+<li><a href="/ReadBarcode/">@Model.AboutUs</a></li>
+<li><a href="/Urunler/">@Model.Services</a></li>
+<li><a href="/BlogPost/">@Model.Blog</a></li>
+<li><a href="/Iletisim/">@Model.Contact</a></li>
+

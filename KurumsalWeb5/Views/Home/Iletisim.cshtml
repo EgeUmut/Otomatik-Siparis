@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = Resources.Lang.Contact_Us;
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+
+
+<section id="content">
+    <div class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15299.007094338287!2d29.113556160388182!3d37.74051433992627!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14c64cd2bfffffff%3A0x7c21102ab89254ac!2sPamukkale%20%C3%9Cniversitesi!5e1!3m2!1str!2str!4v1649006574913!5m2!1str!2str" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h4> <strong>@Resources.Lang.Contact_Us</strong></h4>
+
+                <div style="display:none" class="alert alert-info" >@ViewBag.Uyari</div>
+                <div id="errormessage"></div>
+                <form action="/Home/Iletisim/" method="post" role="form" class="contactForm">
+                    <div class="form-group">
+                        <input type="text" name="name" class="form-control" id="name" placeholder="@Resources.Lang.Name_LastName" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                        <div class="validation"></div>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" name="email" id="email" placeholder="@Resources.Lang.Email" data-rule="email" data-msg="Please enter a valid email" />
+                        <div class="validation"></div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="konu" id="subject" placeholder="@Resources.Lang.Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                        <div class="validation"></div>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" name="mesaj" rows="5" data-rule="required" data-msg="Please enter a valid message" placeholder="@Resources.Lang.Your_Message"></textarea>
+                        <div class="validation"></div>
+                    </div>
+
+                    <div class="text-center"><button type="submit" class="btn btn-theme">@Resources.Lang.Send</button></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+

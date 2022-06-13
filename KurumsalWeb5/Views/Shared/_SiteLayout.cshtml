@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - @ViewBag.Kimlik.Title</title>
+    <meta content="@Html.Raw(ViewBag.kimlik.Description)" name="description">
+    <meta name="keywords" content="@ViewBag.Kimlik.Keywords" />
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.8.3.js"></script>
+
+
+    <script src="~/Scripts/html5-qrcode.min.js"></script>
+    <script src="~/Scripts/js-test.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- css -->
+    <link href="/Content/SiteLayout/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/Content/SiteLayout/css/fancybox/jquery.fancybox.css" rel="stylesheet">
+    <link href="/Content/SiteLayout/css/jcarousel.css" rel="stylesheet" />
+    <link href="/Content/SiteLayout/css/flexslider.css" rel="stylesheet" />
+    <link href="/Content/SiteLayout/css/style.css" rel="stylesheet" />
+
+    <!-- Theme skin -->
+    <link href="/Content/SiteLayout/skins/default.css" rel="stylesheet" />
+
+    <script src="/content/adminlayout/js/jquery.js"></script>
+    <script src="/content/adminlayout/js/jquery-1.8.3.min.js"></script>
+    <!-- Datatables-->
+    <script src="~/Scripts/DataTables/jquery.dataTables.js"></script>
+    <link href="~/Content/DataTables/css/jquery.dataTables.css" rel="stylesheet" />
+    <link href="~/Content/DataTables/css/dataTables.bootstrap4.css" rel="stylesheet" />
+    <script src="~/Scripts/DataTables/dataTables.bootstrap4.js"></script>
+
+</head>
+<body>
+    <div id="wrapper">
+        <!-- start header -->
+        <header>
+            <div class="navbar navbar-default navbar-static-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="/Anasayfa"><img src="@ViewBag.Kimlik.LogoURL" height="30" width="75" /> @ViewBag.Kimlik.Unvan</a>
+                    </div>
+                    <div class="navbar-collapse collapse ">
+                        <ul class="nav navbar-nav">
+                            @{
+                                Html.RenderAction("MenuPartial", "Home");
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- end header -->
+        @RenderBody()
+
+        @{
+            Html.RenderAction("FooterPartial", "Home");
+        }
+    </div>
+    <a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
+    <!-- javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+
+
+
+    <script src="/Content/SiteLayout/js/jquery.js"></script>
+    <script src="/Content/SiteLayout/js/jquery.easing.1.3.js"></script>
+    <script src="/Content/SiteLayout/js/bootstrap.min.js"></script>
+    <script src="/Content/SiteLayout/js/jquery.fancybox.pack.js"></script>
+    <script src="/Content/SiteLayout/js/jquery.fancybox-media.js"></script>
+    <script src="/Content/SiteLayout/js/google-code-prettify/prettify.js"></script>
+    <script src="/Content/SiteLayout/js/portfolio/jquery.quicksand.js"></script>
+    <script src="/Content/SiteLayout/js/portfolio/setting.js"></script>
+    <script src="/Content/SiteLayout/js/jquery.flexslider.js"></script>
+    <script src="/Content/SiteLayout/js/animate.js"></script>
+    <script src="/Content/SiteLayout/js/custom.js"></script>
+
+    <script src="~/Scripts/DataTables/jquery.dataTables.js"></script>
+    <link href="~/Content/DataTables/css/jquery.dataTables.css" rel="stylesheet" />
+    <link href="~/Content/DataTables/css/dataTables.bootstrap4.css" rel="stylesheet" />
+    <script src="~/Scripts/DataTables/dataTables.bootstrap4.js"></script>
+    <script src="~/Views/Home/html5-qrcode.min.js"></script>
+</body>
+</html>
